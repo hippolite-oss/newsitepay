@@ -1,0 +1,110 @@
+.header {
+  background-color: #fff; /* Fond blanc plus moderne */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  padding: 12px 5%; /* Padding relatif */
+  font-family: 'Poppins', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header-logo-image {
+  width: 130px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.header-logo-image:hover {
+  transform: scale(1.05); /* Effet de zoom subtil au survol */
+}
+
+.header-menu {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Boutons modernisés */
+.myButton, .miButton {
+  border-radius: 24px;
+  font-weight: 600;
+  padding: 10px 24px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.myButton {
+  background-color: transparent;
+  color: #0070ba;
+  border-color: #0070ba;
+}
+
+.myButton:hover {
+  background-color: rgba(0, 112, 186, 0.05);
+  color: #005ea6;
+}
+
+.miButton {
+  background: linear-gradient(to right, #0070ba, #00a8e8);
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 112, 186, 0.3);
+}
+
+.miButton:hover {
+  background: linear-gradient(to right, #005ea6, #0095d3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 112, 186, 0.3);
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 20px;
+  }
+  
+  .header-logo-image {
+    width: 100px;
+  }
+  
+  .header-menu {
+    gap: 10px;
+  }
+  
+  .myButton, .miButton {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .header-menu {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
