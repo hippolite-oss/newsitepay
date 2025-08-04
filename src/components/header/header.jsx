@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './header.css';
 import { FaChevronDown, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Changé de react-feather à react-router-dom
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,8 +26,16 @@ const Header = () => {
           </div>
 
           <ul className="header-menu">
-            <button className="myButton">Connexion</button>
-            <button className="miButton">Ouvrir un compte</button>
+            
+              <Link to="/connexion">
+                <button className="myButton">Connexion</button>
+              </Link>
+            
+            
+            <Link to="/inscription">
+              <button className="miButton">Inscription</button> 
+            </Link>
+            
           </ul>
         </div>
       </nav>

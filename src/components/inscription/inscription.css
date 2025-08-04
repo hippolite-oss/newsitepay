@@ -1,0 +1,156 @@
+/* Variables */
+:root {
+  --primary-blue: #003087;
+  --secondary-blue: #009cde;
+  --light-blue: #e9f2fc;
+  --dark-gray: #333;
+  --medium-gray: #555;
+  --light-gray: #eee;
+  --border-radius: 4px;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset et styles de base */
+.connexion-container {
+  max-width: 420px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  background-color: white;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.connexion-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  height: 30px;
+  margin-bottom: 1.5rem;
+}
+
+.connexion-title {
+  color: var(--dark-gray);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Formulaire */
+.connexion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  color: var(--medium-gray);
+  font-weight: 500;
+}
+
+.form-input {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--secondary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 156, 222, 0.2);
+}
+
+/* Options */
+.form-options {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.5rem;
+}
+
+.forgot-password {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.forgot-password:hover {
+  color: var(--secondary-blue);
+  text-decoration: underline;
+}
+
+/* Boutons */
+.submit-btn {
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: #002673;
+}
+
+/* Séparateur */
+.separator {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  color: #999;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.separator-text {
+  padding: 0 1rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Créer un compte */
+.create-account {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.create-account-btn {
+  display: inline-block;
+  background-color: transparent;
+  padding: 12px 24px;
+  border: 1px solid var(--primary-blue);
+  border-radius: var(--border-radius);
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.create-account-btn:hover {
+  background-color: var(--light-blue);
+  border-color: var(--secondary-blue);
+  color: var(--secondary-blue);
+}
