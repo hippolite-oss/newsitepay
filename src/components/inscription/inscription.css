@@ -1,156 +1,223 @@
-/* Variables */
+/* Reset et variables */
 :root {
-  --primary-blue: #003087;
-  --secondary-blue: #009cde;
-  --light-blue: #e9f2fc;
-  --dark-gray: #333;
-  --medium-gray: #555;
-  --light-gray: #eee;
-  --border-radius: 4px;
-  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --paypal-blue: #003087;
+  --paypal-light-blue: #0070ba;
+  --paypal-yellow: #ffc439;
+  --gray-light: #f5f5f5;
+  --gray-border: #ddd;
 }
 
-/* Reset et styles de base */
-.connexion-container {
-  max-width: 420px;
-  margin: 2rem auto;
-  padding: 2.5rem;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
-  background-color: white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-.connexion-header {
+/* Structure principale */
+.inscription-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+/* Header */
+.inscription-header {
+  padding: 1rem;
+}
+
+.inscription-nav-list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+/* Sélecteur de pays */
+.country-selector {
+  flex: 0 1 auto;
+}
+
+.country-select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.country-flag {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 15px;
+  pointer-events: none;
+}
+
+.country-select {
+  padding: 0.5rem 1rem 0.5rem 35px;
+  border: 1px solid white;
+  width: 120px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.country-select:focus {
+  outline: none;
+  border-color: white;
+  background-color: white;
+}
+
+/* Logo PayPal */
+.logo-item {
+  flex: 0 1 auto;
   text-align: center;
-  margin-bottom: 2.5rem;
 }
 
-.logo {
-  height: 30px;
-  margin-bottom: 1.5rem;
+.paypal-logo {
+  height: 40px;
 }
 
-.connexion-title {
-  color: var(--dark-gray);
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+/* Lien de connexion */
+.login-link-item {
+  flex: 0 1 auto;
+  text-align: right;
+}
+
+.login-link {
+  color: var(--paypal-light-blue);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.login-link:hover {
+  color: rgb(61, 120, 248);
+}
+
+/* Contenu principal */
+.inscription-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.inscription-title {
+  margin-bottom: 2rem;
+  color: black;
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Formulaire */
-.connexion-form {
+.inscription-form-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.inscription-form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: center;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-label {
-  font-size: 0.9rem;
-  color: var(--medium-gray);
-  font-weight: 500;
-}
-
-.form-input {
-  padding: 12px 16px;
-  border: 1px solid #ccc;
-  border-radius: var(--border-radius);
+.email-input {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 4px;
   font-size: 1rem;
-  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 600px;
 }
 
-.form-input:focus {
+.email-input:focus {
   outline: none;
-  border-color: var(--secondary-blue);
-  box-shadow: 0 0 0 3px rgba(0, 156, 222, 0.2);
+  border-color: var(--paypal-light-blue);
+  box-shadow: 0 0 0 2px rgba(0, 112, 186, 0.2);
 }
 
-/* Options */
-.form-options {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: -0.5rem;
-}
-
-.forgot-password {
-  color: var(--primary-blue);
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.forgot-password:hover {
-  color: var(--secondary-blue);
-  text-decoration: underline;
-}
-
-/* Boutons */
-.submit-btn {
-  background-color: var(--primary-blue);
+.submit-button {
+  padding: 1rem;
+  background-color: #005ea6;
   color: white;
   border: none;
-  padding: 12px;
-  border-radius: var(--border-radius);
+  border-radius: 25px;
+  width: 50%;
   font-size: 1rem;
-  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
-  margin-top: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  max-width: 600px;
 }
 
-.submit-btn:hover {
-  background-color: #002673;
+.submit-button:hover {
+  background-color: #056dbd;
 }
 
-/* Séparateur */
-.separator {
-  display: flex;
-  align-items: center;
-  margin: 2rem 0;
-  color: #999;
+/* Responsive */
+@media (max-width: 768px) {
+  .inscription-form-container {
+    padding: 1rem;
+  }
+  
+  .inscription-title {
+    font-size: 1.5rem;
+  }
+  
+  .country-select {
+    width: 100px;
+  }
+  
+  .paypal-logo {
+    height: 35px;
+  }
 }
 
-.separator::before,
-.separator::after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px solid #ddd;
-}
-
-.separator-text {
-  padding: 0 1rem;
-  font-size: 0.85rem;
-  color: #777;
-}
-
-/* Créer un compte */
-.create-account {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.create-account-btn {
-  display: inline-block;
-  background-color: transparent;
-  padding: 12px 24px;
-  border: 1px solid var(--primary-blue);
-  border-radius: var(--border-radius);
-  color: var(--primary-blue);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s;
-  width: 100%;
-}
-
-.create-account-btn:hover {
-  background-color: var(--light-blue);
-  border-color: var(--secondary-blue);
-  color: var(--secondary-blue);
+@media (max-width: 480px) {
+  .inscription-header {
+    padding: 0.5rem;
+  }
+  
+  .paypal-logo {
+    height: 30px;
+  }
+  
+  .login-link {
+    padding: 0.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .country-select {
+    width: 80px;
+    font-size: 0.8rem;
+    padding-left: 30px;
+  }
+  
+  .country-flag {
+    width: 16px;
+    height: 12px;
+  }
+  
+  .inscription-main {
+    padding: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .inscription-title {
+    font-size: 1.3rem;
+  }
 }

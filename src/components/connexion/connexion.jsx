@@ -1,17 +1,23 @@
-
 import { Link } from 'react-router-dom';
+import './connex.css';
 
 const Connexion = () => {
-  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Ajoutez ici la logique de soumission du formulaire
+  };
 
   return (
     <div className='connexion-container'>
       <div className='connexion-header'>
-        <h1 className='connexion-title'>PayPal</h1>
-        <p className='connexion-subtitle'>Connectez-vous à votre compte</p>
+        <img 
+          src="assets/p2.png" 
+          alt="Logo de l'application" 
+          className='logo'
+        />
       </div>
       
-      <form className='connexion-form' >
+      <form className='connexion-form' onSubmit={handleSubmit}>
         <div className='form-group'>
           <input 
             type="email" 
@@ -21,32 +27,25 @@ const Connexion = () => {
           />
         </div>
         
-        <div className='form-group'>
-          <input 
-            type="password" 
-            placeholder="Mot de passe" 
-            className='form-input'
-            required
-          />
-        </div>
-        
-        <div className='form-options'>
-          <Link to='#' className='forgot-password'>
-            Mot de passe oublié ?
+        <div className='forgot-link-container'>
+          <Link to='/mot-de-passe-oublie' className='forgot-link'>
+            Adresse email ou numéro oublié ?
           </Link>
         </div>
         
         <button type='submit' className='submit-btn'>
-          Se connecter
+          Suivant
         </button>
       </form>
       
       <div className='separator'>
+        <span className='separator-line'></span>
         <span className='separator-text'>OU</span>
+        <span className='separator-line'></span>
       </div>
       
-      <div className='create-account'>
-        <Link to='/Inscription' className='create-account-btn'>
+      <div className='create-account-container'>
+        <Link to='/inscription' className='create-account-btn'>
           Créer un nouveau compte
         </Link>
       </div>
