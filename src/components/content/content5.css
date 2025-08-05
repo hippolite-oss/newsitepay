@@ -10,7 +10,7 @@
 }
 
 .content5-text {
-  max-width: 600px;
+  max-width: 800px;
   padding: 24px;
   font-size: 1.2rem;
   line-height: 1.6;
@@ -25,22 +25,28 @@
   margin-top: 24px;
 }
 
-.content5-button button {
+/* Nouveau style pour le lien bouton */
+.content5-link {
+  display: inline-block;
   background-color: #4e45ff;
-  color: #fff;
-  border: none;
+  color: white;
   border-radius: 24px;
-  padding: 12px 32px;
+  padding: 12px 36px;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: 700;
+  text-decoration: none;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(78, 69, 255, 0.08);
-  transition: background 0.2s, transform 0.2s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  text-align: center;
 }
 
-.content5-button button:hover {
+.content5-link:hover,
+.content5-link:focus {
   background-color: #372fc9;
   transform: translateY(-2px) scale(1.04);
+  outline: none;
 }
 
 /* Responsive pour mobile */
@@ -56,7 +62,7 @@
     font-size: 1rem;
     margin: 0 8px;
   }
-  .content5-button button {
+  .content5-link {
     width: 90vw;
     font-size: 1rem;
     padding: 12px 0;

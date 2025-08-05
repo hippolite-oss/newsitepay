@@ -1,4 +1,4 @@
-/* Reset et variables */
+/* Variables */
 :root {
   --paypal-blue: #003087;
   --paypal-light-blue: #0070ba;
@@ -7,6 +7,7 @@
   --gray-border: #ddd;
 }
 
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +15,7 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Structure principale */
+/* Container principal */
 .inscription-container {
   min-height: 100vh;
   display: flex;
@@ -22,110 +23,113 @@
   background-color: white;
 }
 
-/* Header */
+/* Header principal */
 .inscription-header {
-  padding: 1rem;
+  background: white;
+  padding: 1rem 0;
 }
 
-.inscription-nav-list {
+.header-content {
   display: flex;
-  list-style: none;
-  align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  align-items: center;
+  max-width: 900px;
   margin: 0 auto;
-  gap: 1rem;
+  padding: 0 1rem;
 }
 
-/* Sélecteur de pays */
-.country-selector {
-  flex: 0 1 auto;
+/* Sélecteur de pays avec drapeau */
+.flag-selector-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.country-select-container {
+.select-flag-pos {
   position: relative;
   display: inline-block;
 }
 
-.country-flag {
+.flag-icon {
   position: absolute;
-  left: 10px;
+  left: 11px;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
+  background: #ececec;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border-radius: 4px;
   pointer-events: none;
+  z-index: 3;
 }
 
-.country-select {
-  padding: 0.5rem 1rem 0.5rem 35px;
+.country-select-modern {
+  color: #222;
   border: 1px solid white;
-  width: 120px;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.country-select:focus {
+  padding: 0.5rem 2.1rem 0.5rem 2.2rem;
+  font-size: 0.95rem;
+  appearance: none;
+  min-width: 130px;
   outline: none;
-  border-color: white;
-  background-color: white;
+  transition: border-color 0.15s;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 
 /* Logo PayPal */
-.logo-item {
-  flex: 0 1 auto;
-  text-align: center;
-}
-
 .paypal-logo {
-  height: 40px;
+  height: 30px;
+  transition: filter 0.2s;
 }
 
-/* Lien de connexion */
-.login-link-item {
-  flex: 0 1 auto;
-  text-align: right;
+.paypal-logo:hover,
+.paypal-logo:focus {
+  filter: drop-shadow(0 2px 6px #0070ba66);
 }
 
-.login-link {
+/* Lien connexion */
+.header-link {
   color: var(--paypal-light-blue);
-  text-decoration: none;
   font-weight: bold;
-  padding: 0.5rem;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 25px;
+  transition: background 0.2s, color 0.2s;
+  border: 2px solid transparent;
 }
 
-.login-link:hover {
-  color: rgb(61, 120, 248);
+.header-link:hover,
+.header-link:focus {
+  color: rgb(31, 7, 135);
+  outline: underline;
 }
 
-/* Contenu principal */
 .inscription-main {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; 
   padding: 2rem;
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 0; 
+  padding-top: 4rem; 
 }
 
 .inscription-title {
-  margin-bottom: 2rem;
-  color: black;
-  font-size: 1.8rem;
-  font-weight: 300;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 2rem; 
 }
+
 
 /* Formulaire */
 .inscription-form-container {
   width: 100%;
   max-width: 600px;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 8px;
+  
 }
 
 .inscription-form {
@@ -173,15 +177,15 @@
   .inscription-form-container {
     padding: 1rem;
   }
-  
+
   .inscription-title {
     font-size: 1.5rem;
   }
-  
-  .country-select {
-    width: 100px;
+
+  .country-select-modern {
+    min-width: 110px;
   }
-  
+
   .paypal-logo {
     height: 35px;
   }
@@ -189,34 +193,35 @@
 
 @media (max-width: 480px) {
   .inscription-header {
-    padding: 0.5rem;
+    padding: 0.5rem 0;
   }
-  
+
   .paypal-logo {
     height: 30px;
   }
-  
-  .login-link {
-    padding: 0.25rem;
+
+  .header-link {
+    padding: 0.25rem 0.5rem;
     font-size: 0.8rem;
   }
-  
-  .country-select {
-    width: 80px;
+
+  .country-select-modern {
+    min-width: 90px;
     font-size: 0.8rem;
-    padding-left: 30px;
+    padding-left: 1.8rem;
   }
-  
-  .country-flag {
+
+  .flag-icon {
     width: 16px;
     height: 12px;
+    left: 8px;
   }
-  
+
   .inscription-main {
     padding: 1rem;
     margin-bottom: 3rem;
   }
-  
+
   .inscription-title {
     font-size: 1.3rem;
   }

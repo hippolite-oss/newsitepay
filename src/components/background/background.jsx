@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './background.css'; 
 import { FaPlay, FaPause, FaUserPlus } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const videoList = [
   '/assets/v1.mp4',
@@ -52,9 +53,9 @@ export default function Background() {
 
       <div className="overlay-content">
         <h1>Bienvenue sur notre plateforme</h1>
-        <button className='btn-by'>
+        <Link to="/inscription" className="btn-by">
           <FaUserPlus /> Ouvrir un compte gratuitement
-        </button>
+        </Link>
       </div>
 
       <div className="video-controls">

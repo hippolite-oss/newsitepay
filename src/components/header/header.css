@@ -1,7 +1,7 @@
 .header {
-  background-color: #fff; /* Fond blanc plus moderne */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile */
-  padding: 12px 5%; /* Padding relatif */
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 6px 5%;
   font-family: 'Poppins', sans-serif;
   position: sticky;
   top: 0;
@@ -11,42 +11,63 @@
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* espace entre left et menu */
   max-width: 1400px;
   margin: 0 auto;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* espace plus grand entre logo et particuliers */
+}
+
 .header-logo-image {
-  width: 130px;
+  width: 100px;
   height: auto;
   transition: transform 0.3s ease;
 }
 
 .header-logo-image:hover {
-  transform: scale(1.05); /* Effet de zoom subtil au survol */
+  transform: scale(1.05);
+}
+
+.header-middle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.header-middle-text {
+  margin-right: 6px;
+  font-weight: 500;
+  color: #222;
+}
+
+.dropdown-icon {
+  font-size: 0.8rem;
+  color: #555;
 }
 
 .header-menu {
   display: flex;
-  gap: 15px;
+  gap: 20px; /* espace plus large entre boutons Connexion et Inscription */
   align-items: center;
 }
 
-/* Boutons modernisés */
-.myButton, .miButton {
+.myButton,
+.miButton {
   border-radius: 24px;
   font-weight: 600;
-  padding: 10px 24px;
-  font-size: 15px;
+  padding: 8px 20px;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
   border: 1px solid transparent;
-}
-
-.myButton {
-  background-color: transparent;
+  background: transparent;
   color: #0070ba;
-  border-color: #0070ba;
+  white-space: nowrap;
 }
 
 .myButton:hover {
@@ -58,6 +79,7 @@
   background: linear-gradient(to right, #0070ba, #00a8e8);
   color: white;
   box-shadow: 0 2px 5px rgba(0, 112, 186, 0.3);
+  border: none;
 }
 
 .miButton:hover {
@@ -66,23 +88,119 @@
   box-shadow: 0 4px 8px rgba(0, 112, 186, 0.3);
 }
 
-/* Version mobile */
+/* Dropdown menu (conserve ta couleur et style) */
+.dropdown-menu {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: rgb(15, 2, 129);
+  border-top: 1px solid #ddd;
+  border: solid 1px white;
+  padding: 20px 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px 50px;
+  z-index: 150;
+  color: #ffffff;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.dropdown-content-wrapper {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px 50px;
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-header {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  left: 20px;
+  height: 56px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0070ba;
+  background-color: rgb(15, 2, 129);
+  box-sizing: border-box;
+  z-index: 160;
+}
+
+.close-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fffdfd;
+  transition: color 0.2s ease;
+}
+
+.close-icon:hover {
+  color: #005ea6;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .header {
-    padding: 12px 20px;
+    padding: 6px 20px;
   }
-  
+
   .header-logo-image {
-    width: 100px;
+    width: 80px;
   }
-  
+
+  .header-left {
+    gap: 20px;
+  }
+
   .header-menu {
-    gap: 10px;
+    gap: 15px;
   }
-  
-  .myButton, .miButton {
-    padding: 8px 16px;
-    font-size: 14px;
+
+  .myButton,
+  .miButton {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    height: auto;
+    max-height: calc(100vh - 56px);
+    padding: 20px 20px 40px;
+    display: block;
+    overflow-y: auto;
+  }
+
+  .dropdown-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 0 20px;
+    z-index: 200;
+    justify-content: flex-start;
+    color: #0070ba;
+    font-weight: 700;
   }
 }
 
@@ -90,21 +208,16 @@
   .header-container {
     flex-direction: column;
     gap: 15px;
+    align-items: center;
   }
-  
+
   .header-menu {
     width: 100%;
     justify-content: center;
+    gap: 10px;
+  }
+
+  .dropdown-menu {
+    padding: 12px 16px 30px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-

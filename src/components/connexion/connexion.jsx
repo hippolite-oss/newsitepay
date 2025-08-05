@@ -46,8 +46,29 @@ const Connexion = () => {
       
       <div className='create-account-container'>
         <Link to='/inscription' className='create-account-btn'>
-          Créer un nouveau compte
+          Créer un compte
         </Link>
+      </div>
+
+      <div className='connexion-footer'>
+        <div className="language-selector">
+          <select>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="de">🇩🇪 Deutsch</option>
+          </select>
+        </div>
+        
+        <div className="footer-links">
+          <Link to='/conditions-utilisation' className='footer-link'>Conditions</Link>
+          <Link to='/politique-confidentialite' className='footer-link'>Confidentialité</Link>
+          <Link to='/aide' className='footer-link'>Aide</Link>
+        </div>
+        
+        <p className='footer-text'>
+          © {new Date().getFullYear()} VotreApplication, Inc.
+        </p>
       </div>
     </div>
   );

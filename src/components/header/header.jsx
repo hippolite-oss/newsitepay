@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './header.css';
 import { FaChevronDown, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom'; // Changé de react-feather à react-router-dom
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,16 +26,13 @@ const Header = () => {
           </div>
 
           <ul className="header-menu">
-            
-              <Link to="/connexion">
-                <button className="myButton">Connexion</button>
-              </Link>
-            
-            
-            <Link to="/inscription">
-              <button className="miButton">Inscription</button> 
+            <Link to="/connexion">
+              <button className="myButton">Connexion</button>
             </Link>
-            
+
+            <Link to="/inscription">
+              <button className="miButton">Ouvrir un compte</button>
+            </Link>
           </ul>
         </div>
       </nav>
@@ -43,19 +40,27 @@ const Header = () => {
       {menuOpen && (
         <div className="dropdown-menu">
           <div className="dropdown-header">
-            <span>Menu Particuliers</span>
             <FaTimes className="close-icon" onClick={toggleDropdown} />
           </div>
-          <ul>
-            <li>Comment PayPal fonctionne</li>
-            <li>Toutes les possibilités de votre compte</li>
-            <li>Payer en ligne</li>
-            <li>Des paiements au-delà des frontières</li>
-            <li>Envoyer des paiements</li>
-            <li>Envoyez des paiements à l'étranger</li>
-            <li>Rechercher des offres</li>
-            <li>Payez avec PayPal et faites des économies</li>
-          </ul>
+
+          <div className="dropdown-content-wrapper">
+            <ul>
+              <li>Comment PayPal fonctionne</li>
+              <li>Toutes les possibilités de votre compte</li>
+            </ul>
+            <ul>
+              <li>Payer en ligne</li>
+              <li>Des paiements au-delà des frontières</li>
+            </ul>
+            <ul>
+              <li>Envoyer des paiements</li>
+              <li>Envoyez des paiements à l'étranger</li>
+            </ul>
+            <ul>
+              <li>Rechercher des offres</li>
+              <li>Payez avec PayPal et faites des économies</li>
+            </ul>
+          </div>
         </div>
       )}
     </div>
