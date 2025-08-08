@@ -1,3 +1,4 @@
+/* ------------------ HEADER DE BASE ------------------ */
 .header {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -11,15 +12,9 @@
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* espace entre left et menu */
+  justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 30px; /* espace plus grand entre logo et particuliers */
 }
 
 .header-logo-image {
@@ -52,7 +47,7 @@
 
 .header-menu {
   display: flex;
-  gap: 20px; /* espace plus large entre boutons Connexion et Inscription */
+  gap: 20px;
   align-items: center;
 }
 
@@ -88,7 +83,7 @@
   box-shadow: 0 4px 8px rgba(0, 112, 186, 0.3);
 }
 
-/* Dropdown menu (conserve ta couleur et style) */
+/* ------------------ MENU DÉROULANT (DESKTOP) ------------------ */
 .dropdown-menu {
   position: absolute;
   top: 56px;
@@ -154,18 +149,72 @@
   color: #005ea6;
 }
 
-/* Responsive */
+/* ------------------ MENU MOBILE ------------------ */
+.mobile-menu-icon {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #0070ba;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: white;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.mobile-submenu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #0070ba;
+  cursor: pointer;
+}
+
+.dropdown-mobile-content {
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  color: #222;
+}
+
+.dropdown-mobile-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-mobile-content li {
+  padding: 6px 0;
+}
+
+.close-submenu-btn {
+  background: none;
+  color: #0070ba;
+  font-weight: bold;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
 @media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
   .header {
     padding: 6px 20px;
   }
 
   .header-logo-image {
     width: 80px;
-  }
-
-  .header-left {
-    gap: 20px;
   }
 
   .header-menu {
@@ -179,35 +228,14 @@
   }
 
   .dropdown-menu {
-    position: fixed;
-    top: 56px;
-    left: 0;
-    right: 0;
-    height: auto;
-    max-height: calc(100vh - 56px);
-    padding: 20px 20px 40px;
-    display: block;
-    overflow-y: auto;
-  }
-
-  .dropdown-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: white;
-    padding: 0 20px;
-    z-index: 200;
-    justify-content: flex-start;
-    color: #0070ba;
-    font-weight: 700;
+    display: none; /* ne pas afficher le dropdown desktop */
   }
 }
 
 @media (max-width: 480px) {
   .header-container {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -217,7 +245,7 @@
     gap: 10px;
   }
 
-  .dropdown-menu {
+  .mobile-menu {
     padding: 12px 16px 30px;
   }
 }
