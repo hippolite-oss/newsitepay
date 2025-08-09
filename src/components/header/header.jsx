@@ -62,14 +62,14 @@ const Header = () => {
             {menuOpen && (
               <div className="dropdown-mobile-content">
                 <ul>
-                  <li>Comment PayPal fonctionne</li>
-                  <li>Toutes les possibilités de votre compte</li>
-                  <li>Payer en ligne</li>
-                  <li>Des paiements au-delà des frontières</li>
-                  <li>Envoyer des paiements</li>
-                  <li>Envoyez des paiements à l'étranger</li>
-                  <li>Rechercher des offres</li>
-                  <li>Payez avec PayPal et faites des économies</li>
+                  <li><a href="#">Comment PayPal fonctionne</a></li>
+                  <li><a href="#">Toutes les possibilités de votre compte</a></li>
+                  <li><a href="#">Payer en ligne</a></li>
+                  <li><a href="#">Des paiements au-delà des frontières</a></li>
+                  <li><a href="#">Envoyer des paiements</a></li>
+                  <li><a href="#">Envoyez des paiements à l'étranger</a></li>
+                  <li><a href="#">Rechercher des offres</a></li>
+                  <li><a href="#">Payez avec PayPal et faites des économies</a></li>
                 </ul>
                 <button onClick={closeDropdown} className="close-submenu-btn">Fermer</button>
               </div>
