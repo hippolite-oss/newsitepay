@@ -4,12 +4,8 @@ import { FaPlay, FaPause, FaUserPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const videoList = [
-  '/assets/v1.mp4',
-  '/assets/v2.mp4',
-  '/assets/v3.mp4',
-  '/assets/v4.mp4',
-  '/assets/v5.mp4',
-  '/assets/v6.mp4',
+  '/assets/vid1.mp4',
+  
 ];
 
 export default function Background() {
