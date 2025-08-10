@@ -9,6 +9,7 @@
   position: relative;
   padding: 0 50px;
   background: none; /* image déplacée dans un div séparé */
+  overflow: hidden;
 }
 
 .content1-image {

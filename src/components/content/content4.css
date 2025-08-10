@@ -9,6 +9,7 @@
   position: relative;
   padding: 0 50px;
   background: none; /* Image en div séparé */
+  overflow: hidden;
 }
 
 .content4-image {
