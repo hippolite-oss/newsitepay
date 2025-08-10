@@ -1,41 +1,55 @@
 .content4-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr; /* deux colonnes */
   align-items: center;
-  justify-content: center;
-  padding: 42px 0;
-  background: url('../../assets/i8.jpg') no-repeat center center;
-  height: 50vh;
-  background-size: cover;
+  height: 72.3vh;
+  width: 100%;
   min-height: 300px;
   box-sizing: border-box;
+  position: relative;
+  padding: 0 50px;
+  background: none; /* Image en div séparé */
+}
+
+.content4-image {
+  background-image: url('../../assets/i8.jpg'); /* tu peux changer l'image ici */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 45%;
+  border-radius: 12px;
+  margin-left: 40%;
 }
 
 .content4-text {
   padding: 32px;
   border-radius: 12px;
-  max-width: 700px; /* limite largeur */
+  max-width: 500px;
   width: 90%;
-  font-size: 1.1rem;
-  color: white;
-  margin: 0; /* suppression margin-right fixe */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  margin-right: 55rem;
+  color: rgb(0, 0, 0);
+  margin: 0;
   text-align: justify;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Responsive pour mobile */
 @media (max-width: 600px) {
   .content4-container {
-    flex-direction: column;
-    padding: 16px 16px;
+    grid-template-columns: 1fr; /* une seule colonne */
+    padding: 16px;
     min-height: 200px;
   }
+  .content4-image {
+    height: 200px;
+    width: 100%;
+    margin-bottom: 16px;
+  }
   .content4-text {
-    padding: 16px;
     max-width: 95vw;
     width: 100%;
     font-size: 1rem;
     margin: 0 auto;
+    padding: 16px;
   }
 }

@@ -1,14 +1,25 @@
 .content1-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr; /* deux colonnes égales */
   align-items: center;
-  justify-content: center;
-  height: 75vh;
+  height: 72.3vh;
   width: 100%;
-  padding-left: 50px;
-  background: url('../../assets/a5.jpg') no-repeat center center;
-  background-size: cover;
   min-height: 300px;
   box-sizing: border-box;
+  position: relative;
+  padding: 0 50px;
+  background: none; /* image déplacée dans un div séparé */
+}
+
+.content1-image {
+  background-image: url('../../assets/a5.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height:100%;
+  width: 45%;
+  border-radius: 12px;
+  margin-left: 40%;
 }
 
 .content1-text {
@@ -18,16 +29,15 @@
   width: 90%;
   color: rgb(0, 0, 0);
   margin: 0;
-  margin-right: 50rem;
   text-align: justify;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-seri
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .content1-highlight {
   color: #0543c7;
   margin-top: 16px;
   font-weight: 600;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-seri
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .content1-highlight a {
@@ -44,16 +54,20 @@
 /* Responsive pour mobile */
 @media (max-width: 600px) {
   .content1-container {
-    flex-direction: column;
-    padding: 16px 16px 16px 16px;
+    grid-template-columns: 1fr; /* une seule colonne */
+    padding: 16px;
     min-height: 200px;
-    background-position: center center;
+  }
+  .content1-image {
+    height: 200px; /* hauteur définie pour mobile */
+    width: 100%;
+    margin-bottom: 16px;
   }
   .content1-text {
-    padding: 16px;
     max-width: 95vw;
     width: 100%;
     font-size: 1rem;
     margin: 0 auto;
+    padding: 16px;
   }
 }

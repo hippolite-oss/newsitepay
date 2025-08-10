@@ -4,6 +4,7 @@ import './content1.css';
 const Content1 = () => {
   return (
     <div className="content1-container">
+      <div className="content1-image" />
       <div className="content1-text">
         <p>
           Rapide et facile.<br />
