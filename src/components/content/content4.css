@@ -43,11 +43,13 @@
     grid-template-columns: 1fr; /* une seule colonne */
     padding: 16px;
     min-height: 200px;
+    height: 35.3vh;
   }
   .content4-image {
     height: 200px;
     width: 100%;
     margin-bottom: 16px;
+    display: none;
   }
   .content4-text {
     max-width: 95vw;

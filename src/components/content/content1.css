@@ -17,10 +17,9 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 450px;    /* hauteur réduite */
-  width: 260px;     /* largeur réduite */
+  height: 450px;    /* hauteur */
+  width: 260px;     /* largeur */
   border-radius: 12px;
-  /* centrer horizontalement */
   margin-bottom: -93px;
   margin-left: 50%;
 }
@@ -61,12 +60,10 @@
     grid-template-columns: 1fr; /* une seule colonne */
     padding: 16px;
     min-height: 200px;
+    height: 35.3vh;
   }
   .content1-image {
-    height: 200px; /* hauteur définie pour mobile */
-    width: 100%;
-    margin: 0 auto 16px; /* centré avec marge en bas */
-    border-radius: 12px;
+    display: none; /* masque l'image en mobile */
   }
   .content1-text {
     max-width: 95vw;
