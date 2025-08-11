@@ -1,45 +1,43 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './background.css'; 
 import { FaPlay, FaPause, FaUserPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const videoList = [
-  '/assets/vid1.mp4',
-  
-];
+const videoSrc = '/assets/vid1.mp4';
 
 export default function Background() {
   const videoRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
-  const [videoIndex, setVideoIndex] = useState(0);
-
-  useEffect(() => {
-    setVideoIndex(Math.floor(Math.random() * videoList.length));
-  }, []);
+  const [isEnded, setIsEnded] = useState(false);
 
   const togglePlayPause = () => {
     if (!videoRef.current) return;
-    if (isPaused) {
+
+    if (isEnded) {
+      // Si la vidéo est finie, recommencer depuis le début et lancer
+      videoRef.current.currentTime = 0;
       videoRef.current.play();
+      setIsPaused(false);
+      setIsEnded(false);
+    } else if (isPaused) {
+      videoRef.current.play();
+      setIsPaused(false);
     } else {
       videoRef.current.pause();
+      setIsPaused(true);
     }
-    setIsPaused(!isPaused);
   };
 
   const handleVideoEnded = () => {
-    let nextIndex;
-    do {
-      nextIndex = Math.floor(Math.random() * videoList.length);
-    } while (nextIndex === videoIndex);
-    setVideoIndex(nextIndex);
+    setIsEnded(true);
+    setIsPaused(true);
   };
 
   return (
     <div className="background-container">
       <video
         ref={videoRef}
-        src={videoList[videoIndex]}
+        src={videoSrc}
         autoPlay
         muted
         loop={false}
@@ -48,7 +46,7 @@ export default function Background() {
       ></video>
 
       <div className="overlay-content">
-        <h1>Bienvenue sur notre plateforme</h1>
+        <h1 className="overlay-content-h1">Votre argent est plus efficace.</h1>
         <Link to="/inscription" className="btn-by">
           <FaUserPlus /> Ouvrir un compte gratuitement
         </Link>

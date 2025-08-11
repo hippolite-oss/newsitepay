@@ -13,13 +13,15 @@
 }
 
 .content4-image {
-  background-image: url('../../assets/i8.jpg'); /* tu peux changer l'image ici */
+  background-image: url('../../assets/i8.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 100%;
-  width: 45%;
+  height: 450px;    /* hauteur réduite */
+  width: 300px;     /* largeur réduite */
   border-radius: 12px;
+  /* centrer horizontalement */
+  margin-bottom: -93px;
   margin-left: 40%;
 }
 
@@ -32,6 +34,7 @@
   margin: 0;
   text-align: justify;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 5%;
 }
 
 /* Responsive pour mobile */

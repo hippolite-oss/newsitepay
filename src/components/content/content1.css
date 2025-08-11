@@ -1,6 +1,6 @@
 .content1-container {
   display: grid;
-  grid-template-columns: 0.5fr 0.5fr; /* deux colonnes égales */
+  grid-template-columns: 0.4fr 0.6fr; /* colonne image plus étroite */
   align-items: center;
   height: 72.3vh;
   width: 100%;
@@ -17,10 +17,12 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height:100%;
-  width: 45%;
+  height: 450px;    /* hauteur réduite */
+  width: 260px;     /* largeur réduite */
   border-radius: 12px;
-  margin-left: 40%;
+  /* centrer horizontalement */
+  margin-bottom: -93px;
+  margin-left: 50%;
 }
 
 .content1-text {
@@ -32,6 +34,7 @@
   margin: 0;
   text-align: justify;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 20%;
 }
 
 .content1-highlight {
@@ -62,7 +65,8 @@
   .content1-image {
     height: 200px; /* hauteur définie pour mobile */
     width: 100%;
-    margin-bottom: 16px;
+    margin: 0 auto 16px; /* centré avec marge en bas */
+    border-radius: 12px;
   }
   .content1-text {
     max-width: 95vw;
